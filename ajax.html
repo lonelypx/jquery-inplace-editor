@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> jQuery inPlaceEditor Demo </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+  <script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+  <!-- Include jQuery Syntax Highlighter -->
+  <script type="text/javascript" src="http://balupton.github.com/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
+  <!-- Initialise jQuery Syntax Highlighter -->
+<script type="text/javascript">$.SyntaxHighlighter.init();</script>
+  <script type="text/javascript" src="inplace.js"></script>
+  	<link href="blueprint/mobile.css" rel="stylesheet" media="screen, projection" type="text/css" />
+    <link rel="stylesheet" href="blueprint/print.css" type="text/css" media="print">
+	<link rel="stylesheet" href="blueprint/screen.css" type="text/css" media="only screen and (min-width: 600px)">
+    <!--[if lt IE 8]><link rel="stylesheet" href="blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<!--[if lt IE 8]><link rel="stylesheet" href="blueprint/screen.css" type="text/css" media="screen, projection"><![endif]-->
+  <SCRIPT LANGUAGE="JavaScript">
+  <!--
+	$(document).ready(function(){
+		$('.item').inPlaceEditor({event:'click',callback:onUpdate,beforeEdit:editBigin,type:'select',
+			provider:{type:'URL',data:'sample.html'}});
+		
+	});
+
+
+	function onUpdate(o){
+
+		$('#info').attr("class","");// remove all class from info div 
+		$('#info').text("Text Updated to "+ o.val);
+		$('#info').addClass("success");
+
+	}
+	
+	var lastvalue="";
+	function editBigin(o){
+		lastvalue=$(o.target).text();
+	}
+
+  //-->
+  </SCRIPT>
+  <style>
+  .edit{
+	border:solid 1px red;
+	/*background-image:url('images/1366456848_doc_edit.png');*/
+  }
+
+  .b{border:solid 1px #aeaeae;background-color:#f5f5f5;}
+  .full{border:solid 0px #DDDDDD;padding-left:5px}
+  .et{background-color:white}
+  .et th {background-color:#060606;color:white;}
+  .et td {height:40px}
+  #info{}
+  #content-1{margin:5px;}
+  </style>
+ </HEAD>
+
+ <BODY>
+ <div class="container b">
+	<div class="span-24">
+	<center><h1>jQuery inPlaceEditor Demo</h1></center>
+	<hr>
+	</div>
+	<!-- title and topics -->
+	<div class="span-24">
+	<div class="full">
+	<ul>
+		<li><a href="inplaceeditordemo.html">Basic Example</a>
+		<li><a href="input.html">How to Validate Inputs</a>
+		<li><a href="ajax.html">How to Load data Using AJAX</a>
+		<li><a href="update-ajax.html">How to Update data Using AJAX</a>
+	</ul>
+	</div>
+	<h2>How to Load data </h2>
+	</div>
+	<!-- title and topics end -->
+	<div class="span-24">
+	<div id="info" class="notice"><b>Click any Item TD to edit. values are loaded form <a href="sample.html">sample.html</a></b></div>
+	</div>
+	<div class="span-24">
+				<div class="full">
+				
+				<table class="et">
+				<tr>
+					<TH>NO</TH>
+					<TH>ITEM</TH>
+					<TH>QUTY</TH>
+					<TH>PRICE</TH>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td class="item">Item 1</td>
+					<td>5</td>
+					<td class="price">100</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td class="item">Item 2</td>
+					<td>5</td>
+					<td class="price">200</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td class="item">Item 3</td>
+					<td>2</td>
+					<td class="price">500</td>
+				</tr>
+				</table>
+				</div>
+	</div>
+
+	<!-- Useage  -->
+	<div class="span-24">
+		<div class="full">
+			<h2>Code</h2>
+			<pre class="language-javascript" style="width:99%;background-color:#f9f9f9">
+				$(document).ready(function(){
+					$('.item').inPlaceEditor({event:'click',callback:onUpdate,beforeEdit:editBigin,type:'select',
+						provider:{type:'URL',data:'sample.html'}});// init the .item as inplace editable
+					
+				});
+
+				//provider:{type:'URL',data:'sample.html'} ajax data
+				//provider:{type:'URL',data:'&lt;option value="a"&gt;a&lt;/option&gt;'} embeded data
+
+
+				function onUpdate(o){
+
+					$('#info').attr("class","");// remove all class from info div 
+					$('#info').text("Text Updated to "+ o.val);
+					$('#info').addClass("success");
+
+				}
+				
+				var lastvalue="";
+				function editBigin(o){
+					lastvalue=$(o.target).text();
+				}
+			</pre>
+		</div>
+	</div>
+	<!-- end syntax -->
+
+ </div>
+ </BODY>
+</HTML>
