@@ -1,6 +1,7 @@
 /*
 * jQuerty inPlaceEditior Plugin
 * Copyright (c) 2013 Anil Mathew
+* For help and documentation visit http://www.lonelypx.com
 */
 (function( $ ){
 
